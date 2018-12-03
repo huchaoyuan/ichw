@@ -38,9 +38,15 @@ def test_up():
     '''test up()'''
     assert(up('{ "from" : "2.5 United States Dollars", "to" : "2.1589225 Euros", "success" : true, "error" : "" }')==
            '{ "from" : "2.5 United States Dollars", "to" : "2.1589225 Euros", "success" : True, "error" : "" }')
+    assert(up('{ "from" : "2.5 United States Dollars", "to" : "278.4975 Japanese Yen", "success" : true, "error" : "" }')==
+           '{ "from" : "2.5 United States Dollars", "to" : "278.4975 Japanese Yen", "success" : True, "error" : "" }')
+    assert(up('{ "from" : "2.5 United States Dollars", "to" : "17.13025 Chinese Yuan", "success" : true, "error" : "" }')==
+    '{ "from" : "2.5 United States Dollars", "to" : "17.13025 Chinese Yuan", "success" : True, "error" : "" }')
 def test_exchange():
     '''test exchange()'''
     assert(exchange('USD','EUR','2.5')==2.1589225)
+    assert(exchange('USD','CNY','2.5')==17.13025)
+    assert(exchange('USD','JPY','2.5')==278.4975)
 def testAll():
     """test all cases"""
     test_up()
