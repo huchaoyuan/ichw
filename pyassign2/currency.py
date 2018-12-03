@@ -46,8 +46,8 @@ def testAll():
     test_up()
     test_exchange()
     print("All tests passed")
-testAll()
 def main():
+    testAll()
     print(exchange(currency_from, currency_to, amount_from))
 if __name__ == '__main__':
     main()
