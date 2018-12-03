@@ -36,15 +36,17 @@ def exchange(currency_from, currency_to, amount_from):
     pass
 def test_up():
     '''test up()'''
-    assert(up('{ "from" : "2.5 United States Dollars", "to" : "2.1589225 Euros", "success" : true, "error" : "" }'))
+    assert(up('{ "from" : "2.5 United States Dollars", "to" : "2.1589225 Euros", "success" : true, "error" : "" }')==
+           '{ "from" : "2.5 United States Dollars", "to" : "2.1589225 Euros", "success" : True, "error" : "" }')
 def test_exchange():
     '''test exchange()'''
-    assert(exchange('USD','EUR','2.5'))
+    assert(exchange('USD','EUR','2.5')==2.1589225)
 def testAll():
     """test all cases"""
     test_up()
     test_exchange()
     print("All tests passed")
+testAll()
 def main():
     print(exchange(currency_from, currency_to, amount_from))
 if __name__ == '__main__':
